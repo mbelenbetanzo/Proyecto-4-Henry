@@ -3,32 +3,49 @@ import { IProductCardProps } from "@/interfaces/Interfaces"
 
 function ProductCard({product}: IProductCardProps) {
     return(
-<div className=" flex space-x-4 ">
-    <div className="flex flex-col gap-3 p-4 w-56 bg-[#27272a] rounded-lg">
+<div className="flex justify-center lg:flex-wrap lg:justify-around lg:ml-2 lg:space-x-4">
+  <article className="w-[60%] lg:w-[280px] lg:h-[379px]  mb-[40px] lg:mb-[70px] flex flex-col items-center h-[280px]  bg-[#f5f4f4] rounded-md">
+    <img className="w-[80%] mx-auto rounded-md mt-2 lg:w-[250px]" src={product.image} alt={product.name} />
+    <div className="text-center">
+      <h3 className="mt-3"  >{product.name.toUpperCase()}</h3>
+      <h4 className="mt-1" >Garantía de 1 año⚠️</h4>
+      <h4 className="mt-1 mb-1" >${product.price}✅</h4>
+      <button className="
+  px-3 py-2 w-40 
+  rounded-[8px] 
+  border-0 
+  bg-[rgb(230,141,58)] 
+  tracking-wide 
+  text-[12px] 
+  transition-all 
+  duration-300 
+  ease-in-out 
+  shadow-[0px_5px_0px_0px_rgb(201,46,70)] 
+  text-white 
+  cursor-pointer
+  hover:shadow-[0px_5px_0px_0px_rgb(201,46,70)] 
+  active:bg-[rgb(236,128,56)] 
+  active:shadow-none 
+  active:transform 
+  active:translate-y-[4px]
+  active:transition-[transform_shadow]
+  active:duration-[200ms]
+  sm:px-10 sm:py-4 sm:text-[15px] sm:shadow-[0px_10px_0px_0px_rgb(201,46,70)]
+  sm:hover:shadow-[0px_7px_0px_0px_rgb(201,46,70)]
+  sm:active:translate-y-[5px]
+  
+  lg:px-10 lg:py-1 lg:rounded-[10px] lg:text-[16px] lg:shadow-[0px_10px_0px_0px_rgb(201,46,70)] lg:h-[35px]
+  lg:hover:shadow-[0px_7px_0px_0px_rgb(201,46,70)] 
+  lg:active:translate-y-[5px]
+">
+  Detalle
+</button>
 
-      <div className="relative z-10 w-full h-40 bg-[#4c1d95] rounded-lg  cursor-pointer">
-              <img src={product.image} alt="Product Image" className="w-full h-full object-cover" />
-            </div>
-      
-            <div className="text-lg font-semibold text-[#d9d9d9] capitalize overflow-clip">
-              <span>{product.name}</span>
-            </div>
-      
-            <div className="text-sm text-[#d9d9d9]">
-              <span>e</span>
-            </div>
-      
-            <div className="flex items-center gap-4">
-              <div className="text-2xl font-bold text-[#d9d9d9]">
-                <span>${product.price}</span>
-              </div>
-      
-              <button className="cursor-pointer flex justify-center items-center gap-1 py-2 px-4 bg-[#C4AC23] text-sm font-medium text-black border-2 rounded-lg shadow-inner">
-                <span>Detalles</span>
-              </button>
-            </div>
-          </div>
-          </div>
+    </div>
+  </article>
+</div>
+
+       
 
       
   )
@@ -38,12 +55,3 @@ export default ProductCard
 
 //para imagenes es mejor usar la etiqueta image e importarlo de next, esta optimizado
 
-/*<div>
-         <Image src={product.image} alt={product.name} width={200} height={200} /> 
-         <h2>{product.name}</h2>
-         <p>{product.price}</p>
-         <button>Detalle</button>
-        </div>*/
-
-        //flex flex-col gap-3 p-4 w-full sm:w-56 bg-[#27272a] rounded-lg border-2 border-yellow-500
-//relative z-10 w-full h-40 bg-[#4c1d95] rounded-lg overflow-hidden cursor-pointer

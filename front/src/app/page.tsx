@@ -33,13 +33,16 @@ export default function Home() {
 
     </section>
 
-    <section>
-      <img src="/assets/image1.png" className="p-3 mt-2 h-[150px] lg:p-8 lg:rounded-md" alt="" />
+    <section className="lg:flex justify-center lg:mt-9">
+      <img src="/assets/image1.png" className="p-3 mt-2 h-[150px] lg:p-8 lg:h-auto lg:w-[100%] "  alt="" />
     </section>
 
-    <h2 className="text-[#c4ac23] mt-3 mb-4  lg:text-[35px] lg:text-[#C4AC23] text-center lg:mb-20 "  >Nuestros productos EN STOCK🔥</h2>
+    <h2 className="text-[#c4ac23] mt-3 mb-4 lg:mt-5 lg:text-[40px] lg:text-[#C4AC23] text-center lg:mb-20 "  >Nuestros productos EN STOCK🔥</h2>
       
-    <ProductsComponent products={productos}/>
+    <div className="flex flex-col items-center lg:flex-row lg:flex-wrap lg:justify-around lg:ml-2 lg:space-x-4">
+  <ProductsComponent products={productos} />
+</div>
+
 
     <img src="/assets/image 10.png" className="hidden lg:block  lg:ml-[120px] lg:mt-[50px]  lg:w-[80%] lg:h-[400px]" alt="" />
   

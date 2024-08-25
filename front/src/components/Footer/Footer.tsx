@@ -15,10 +15,14 @@ const Footer = () => {
       <img className=" h-[40px] lg:h-[80px]" src="/assets/KOMODO (1580 x 450 px) (80 x 80 px) (2).svg" alt="logo" />
     </div>
   
-    <div className=" flex-col hidden absolute  items-end mr-2">
-      <h6 className="hidden absolute lg:text-[#C4AC23] lg:text-sm">📍Zona constitución, Mar del Plata</h6>
-      <h6 className=" hidden absolute lg:text-[#C4AC23] lg:text-sm">✨2024 - Todos los derechos reservados</h6>
-    </div>
+    <div className="hidden lg:flex lg:flex-col lg:items-end lg:mr-2">
+  <h6 className="lg:text-[#C4AC23] lg:text-sm">
+    📍Zona constitución, Mar del Plata
+  </h6>
+  <h6 className="lg:text-[#C4AC23] lg:text-sm">
+    ✨2024 - Todos los derechos reservados
+  </h6>
+</div>
   </div>
   
   )
