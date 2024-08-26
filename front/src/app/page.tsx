@@ -1,5 +1,5 @@
 import ProductsComponent from "@/components/Cards";
-import { productos } from "../../public/data";
+
 import Video from "@/components/Video/Video";
 
 
@@ -40,7 +40,7 @@ export default function Home() {
     <h2 className="text-[#c4ac23] mt-3 mb-4 lg:mt-5 lg:text-[40px] lg:text-[#C4AC23] text-center lg:mb-20 "  >Nuestros productos EN STOCK🔥</h2>
       
     <div className="flex flex-col items-center lg:flex-row lg:flex-wrap lg:justify-around lg:ml-2 lg:space-x-4">
-  <ProductsComponent products={productos} />
+  <ProductsComponent />
 </div>
 
 

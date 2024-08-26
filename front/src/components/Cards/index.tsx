@@ -1,12 +1,21 @@
-import { IProducts, IProductsComponent } from "@/interfaces/Interfaces";
-import ProductCard from "../Card";
 
-function ProductsComponent({products}: IProductsComponent) {
+import ProductCard from "../Card";
+import React from "react";
+import { getProductsDB } from "@/helpers/products.helper";
+import Link from "next/link";
+
+const ProductsComponent = async () => {
+  const products = await getProductsDB();
     return(
       <>
-        {products.map((product: IProducts )=> (
-            <ProductCard product={product} key={product.id}  />
-        ))}
+        {products && products?.map((product)=> {
+          return (
+            <Link href={`/productos/${product.id}`} key={product.id}>
+            <ProductCard {...product} key={product.id}  />
+            </Link>
+          )
+})}
+     
       </>
     )
 }

@@ -1,15 +1,15 @@
 
-import { IProductCardProps } from "@/interfaces/Interfaces"
+import { IProducts } from "@/interfaces/Interfaces"
 
-function ProductCard({product}: IProductCardProps) {
+function ProductCard({name, price, image, id, stock, description,}: IProducts) {
     return(
 <div className="flex justify-center lg:flex-wrap lg:justify-around lg:ml-2 lg:space-x-4">
   <article className="w-[60%] lg:w-[280px] lg:h-[379px]  mb-[40px] lg:mb-[70px] flex flex-col items-center h-[280px]  bg-[#f5f4f4] rounded-md">
-    <img className="w-[80%] mx-auto rounded-md mt-2 lg:w-[250px]" src={product.image} alt={product.name} />
+    <img className="w-[80%] mx-auto rounded-md mt-2 lg:w-[250px]" src={image} alt={name} />
     <div className="text-center">
-      <h3 className="mt-3"  >{product.name.toUpperCase()}</h3>
+      <h3 className="mt-3"  >{name.toUpperCase()}</h3>
       <h4 className="mt-1" >Garantía de 1 año⚠️</h4>
-      <h4 className="mt-1 mb-1" >${product.price}✅</h4>
+      <h4 className="mt-1 mb-1" >${price}✅</h4>
       <button className="
   px-3 py-2 w-40 
   rounded-[8px] 
