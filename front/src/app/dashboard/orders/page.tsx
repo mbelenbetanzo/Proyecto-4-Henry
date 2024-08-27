@@ -1,11 +1,87 @@
-import React from 'react'
+'use client'
+import { getOrders } from '@/helpers/orders.helper';
+import { IOrder, IUserSession } from '@/interfaces/Interfaces';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
 
-const OrdersAll = () => {
+const Orders = () => {
+  const router = useRouter();
+  const [userSession, setUserSession] = useState<IUserSession>()
+  const [orders, setOrders] = useState<IOrder[]>([])
+  
+  useEffect(() => {
+    if(typeof window !== "undefined" && window.localStorage) {
+      const userData = localStorage.getItem("userSession")
+      setUserSession(JSON.parse(userData!))
+    }
+  }, [])
+
+  const fetchData = async () => {
+    const ordersResponse = await getOrders(userSession?.token!);
+    setOrders(ordersResponse)
+  }
+
+  useEffect(()=>{
+    if(userSession?.user.name) {
+      userSession?.user.name === undefined ? router.push("/login") : fetchData()
+    }
+  }, [userSession?.user])
+
+
   return (
-    <div>
-        <h1>aca van todas las ordenes</h1>
-    </div>
-  )
-}
+    <div className="p-4 lg:h-[1000px]">
+      <h1 className="text-2xl font-bold text-center mb-4 mt-10">MIS PEDIDOS</h1>
 
-export default OrdersAll;
+      <div className="flex justify-between items-center mb-4">
+        <Link href={"/dashboard"} className="text-sm font-semibold underline">
+         VOLVER A MI PERFIL
+        </Link>
+        
+      </div>
+
+      <h2 className="text-xl font-bold mb-4">Pedidos</h2>
+
+      {orders && orders.length > 0 ? (
+        orders.map((order) => (
+          <div key={order.id} className="border rounded-lg shadow-md p-4 mb-4">
+            <div className="flex justify-between items-center mb-2">
+              <div>
+                <p className="text-sm">
+                  <span className="font-bold">Fecha del pedido:</span> {new Date(order.date)?.toLocaleDateString()} ✅</p>
+
+              </div>
+              <div className="text-right">
+                <p className="text-sm mb-4">Numero de pedido: #{order.id}</p>
+                <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+                  {order.status.toUpperCase()}
+                </span>
+              </div>
+            </div>
+
+
+            <div className="flex justify-between items-center mt-2">
+              <button className="bg-[#C4AC23] text-white py-2 px-4 text-sm font-semibold rounded-lg">
+                VER DETALLES DEL PEDIDO
+              </button>
+              <a href="#" className="text-orange-500 text-sm underline">
+                CAMBIAR O DEVOLVER
+              </a>
+            </div>
+          </div>
+        ))
+      ) : (
+        <div>
+          <p>No tenes pedidos📦</p>
+          <Link href={"/"}>
+          HACE CLICK ACA PARA COMPRAR TUS PRODUCTOS FAVORITOS🔥
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+};
+  
+
+
+export default Orders;

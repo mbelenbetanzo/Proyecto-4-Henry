@@ -3,6 +3,7 @@
 import { IUserSession } from '@/interfaces/Interfaces'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 const ProfileComponent = () => {
 
@@ -53,9 +54,9 @@ const ProfileComponent = () => {
           </li>
           
           <li>
-            <a href="#" className="flex items-center text-gray-700">
+            <Link href="/dashboard/orders" className="flex items-center text-gray-700">
               <span>📦Mis pedidos</span>
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#" className="flex items-center text-gray-700">
