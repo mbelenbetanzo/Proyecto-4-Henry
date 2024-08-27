@@ -22,9 +22,9 @@ useEffect(() => {
         <img className=' w-[40px]  lg:w-[60px]' src='/assets/KOMODO (1580 x 450 px) (80 x 80 px) (2).svg' alt="logo pequeño"/>
         </div>
 
-        <nav className='flex justify-center lg:space-x-20'>
+        <nav className='flex justify-center items-center lg:space-x-20 ml-12'>
         <Link href="/" className='hidden lg:block  lg:text-[18px]  lg:text-[#C4AC23]'>HOME</Link>     
-        <Link href="/tratamientos" className='hidden lg:block   lg:text-[18px] lg:text-[#C4AC23]'>OFERTAS</Link>
+        <img src='/assets/apple1.png' className='hidden lg:block lg:w-[35px] lg:h-[35px]   lg:text-[18px] lg:text-[#C4AC23]'/>
         <Link href="/contactanos" className='hidden lg:block lg:text-[18px] lg:text-[#C4AC23]'>CONTACTO</Link>  
         </nav>
 

@@ -17,7 +17,7 @@ const Footer = () => {
   
     <div className="hidden lg:flex lg:flex-col lg:items-end lg:mr-2">
   <h6 className="lg:text-[#C4AC23] lg:text-sm">
-    📍Zona constitución, Mar del Plata
+    📍Zona playa, Necochea
   </h6>
   <h6 className="lg:text-[#C4AC23] lg:text-sm">
     ✨2024 - Todos los derechos reservados
