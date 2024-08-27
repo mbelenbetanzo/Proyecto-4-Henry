@@ -1,10 +1,12 @@
 "use client"
-import { IUserSession } from '@/interfaces/Interfaces'
+import { IProducts, IUserSession } from '@/interfaces/Interfaces'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import Carri from '../Carri/Carri'
+
 
 const CartPage = () => {
+  const [cart, setCart] = useState<IProducts[]>([])
+  const [totalCart, setTotalCart] = useState<number>(0)
     const router = useRouter()
 
     const [userSession, setUsserSession] = useState<IUserSession>()
@@ -16,7 +18,21 @@ const CartPage = () => {
       }
     }, [])
   //useeffect es el mejor aliado para el lado del cliente,y el ciclo de vida del componente
-  
+    useEffect(() => {
+      if(typeof window !== "undefined" && window.localStorage) {
+      const storedCart = JSON.parse(localStorage.getItem("cart") || "[]")
+      if(storedCart) {
+        let totalCarrito = 0;
+        storedCart.map((item: IProducts) => {
+          totalCarrito = totalCarrito + item.price
+        })
+        setTotalCart(totalCarrito)
+        setCart(storedCart)
+      }
+    }}, [])
+
+
+
    useEffect(() => {
     if(userSession?.user.name) {
       userSession?.user.name === undefined && router.push("/login")
@@ -25,35 +41,36 @@ const CartPage = () => {
 
 
   return (
-    <div className="min-h-screen p-4 md:p-8 bg-gray-100 flex flex-col justify-center ">
-   
+    <div>
+
+      {
+        cart && cart.length > 0 ? (
+          cart?.map((cart) => {
+            return (
+           <div key={cart.id} className="min-h-screen p-4 md:p-8 bg-gray-100 flex flex-col justify-center ">
     <header className="flex items-center space-x-2 text-[#C4AC23] mb-6">
       <span className="text-sm md:text-base underline">SEGUIR COMPRANDO</span>  
     </header>
 
     <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center">MI CUENTA</h1>
 
-
-
-
-
-    <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg mb-6 w-[80%] mx-auto ">
+    <div className="bg-white p-4 md:p-6 rounded-lg lg:h-[140px] shadow-lg mb-6 w-[80%] mx-auto ">
       
       <div className="flex flex-col md:flex-row md:space-x-4">
         <div className="mb-4 md:mb-0 md:w-1/4">
           <img
-            src="/assets/Rectangle 5.png"
-            alt="Secador de Pelo"
+            src={cart.image}
+            alt={cart.name}
             className="w-[100px] rounded h-auto"
           />
         </div>
         
         <div className="md:w-3/4">
-          <h2 className="text-lg font-bold">Secador de Pelo Profesional Iónico Digital Dual Ionic BabylissPRO SECADOR HIGH-SPEED DIGITAL DRYER BABYLISS</h2>
+          <h2 className="text-lg font-bold">{cart.name}</h2>
           <div className="flex justify-between items-center mt-4">
             <span className="text-gray-500">Eliminar producto</span>
             
-            <span className="text-[#C4AC23] font-bold">$436.990</span>
+            <span className="text-[#C4AC23] font-bold">US${cart.price}</span>
 
             <div className="flex items-center space-x-2 h-[30px] bg-[#C4AC23] p-2 rounded-[25px]">
               <button className="px-2   rounded">-</button>
@@ -61,15 +78,12 @@ const CartPage = () => {
               <button className="px-2  rounded">+</button>
             </div>
 
-            <span className="font-bold text-gray-800">$436.990</span>
+            <span className="font-bold text-gray-800">US${cart.price}</span>
           </div>
         </div>
       </div>
     </div>
 
-
-
-    
     <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg mb-6 w-[80%] mx-auto ">
       <h2 className="text-lg font-bold mb-4 h-[30px]">ENTREGA</h2>
       
@@ -86,7 +100,7 @@ const CartPage = () => {
     <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg w-[80%] mx-auto">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-bold">Subtotal</h2>
-        <span className="text-lg font-bold">$436.990</span>
+        <span className="text-lg font-bold">US${totalCart}</span>
       </div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-bold">Envío</h2>
@@ -94,7 +108,7 @@ const CartPage = () => {
       </div>
       <div className="flex justify-between items-center text-xl font-bold mb-4">
         <h2>Total</h2>
-        <span>$436.990</span>
+        <span>US${totalCart}</span>
       </div>
       <button className="w-full py-3 text-white bg-[#C4AC23] rounded-lg text-center">
         FINALIZAR COMPRA
@@ -102,7 +116,26 @@ const CartPage = () => {
     </div>
   </div>
 
+            )
+          })
+        ) : (
+          <div>You don't have any products in your cart</div>
+        )
+      }
     
+   
+    
+
+
+
+
+
+
+
+
+
+
+  </div>
   )
 }
 

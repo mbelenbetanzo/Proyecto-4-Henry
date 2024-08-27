@@ -6,27 +6,45 @@ import { IUserSession } from '@/interfaces/Interfaces'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
+import { useRouter } from 'next/navigation'
 
-const ProductDetail: React.FC<IProducts> = ({name, image, description, price, stock}) => {
-  
+const ProductDetail: React.FC<IProducts> = ({name, image, description, price, stock, id}) => {
+    const router = useRouter();
     const [userSession, setUsserSession] = useState<IUserSession>()
 
     useEffect(() => {
-      if(typeof window !== "undefined" && window.localStorage) {
+      if(typeof window !== "undefined" && window.localStorage) { 
         const userData = localStorage.getItem("userSession")
         setUsserSession(JSON.parse(userData!))
       }
     }, [])
 
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    if (userSession && userSession.token) {
-        Swal.fire("Producto agregado al carrito✅") //hardcodeado
-    } else {
-        Swal.fire("Para agregar productos al carrito debes estar registrado") 
-
-    }
-  }
+  const handleClick = () => {
+    if (userSession && userSession.token) { //si el usuario esta logueado o no
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]") //o que si esta vacio igual me lo guarde, leo el carrito
+      const productexiste = cart.some((product: IProducts) => {
+        if(product.id === id) return true //si existe un producto con este id
+        return false
+      })
+      if(productexiste) {
+        Swal.fire("Ya agregaste este producto al carrito")
+      router.push("/carrito")
+    } else { //si no existe lo traigo
+      cart.push({
+        name,
+        description,
+        image,
+        price,
+        stock,
+        id
+      })
+      localStorage.setItem('cart', JSON.stringify(cart)) //lo guardamos
+      Swal.fire("Producto agregado al carrito✅") 
+      router.push("/carrito")
+    }} else {
+      Swal.fire("No puedes agregar productos al carrito si no estas logueado") 
+    } }
   
     return (
     <main className='h-[1000px] lg:h-[750px] flex flex-col lg:flex-row'>
