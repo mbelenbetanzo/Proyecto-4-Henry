@@ -5,8 +5,12 @@ import { IRegister } from "@/interfaces/Interfaces";
 import { validateRegister } from '@/helpers/validateRegister';
 import { IRegisterErrors } from '@/interfaces/Interfaces';
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { register } from '@/helpers/auth.helper';
+import Swal from 'sweetalert2';
 
 const RegisterForm = () => {
+  const router = useRouter();
   const initialState = {
     name: '',
     email: '',
@@ -23,9 +27,18 @@ const RegisterForm = () => {
     setDataUser({...dataUser, [name]: value})
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    alert("Enviado con exito")
+    try {
+      await register(dataUser)
+      Swal.fire("Te registraste correctamente") 
+      router.push("/login")
+    } 
+
+    catch (error: any) {
+      throw new Error(error)
+      
+    }
     };
 
     useEffect(() => {

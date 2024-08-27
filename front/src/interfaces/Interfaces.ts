@@ -54,9 +54,9 @@ export interface CreateOrder {
     password: string
 }
 
-export interface ILoginProps {
-    login: ILogin
-}
+//export interface ILoginProps {
+ //   login: ILogin
+//}
 
 export interface ILoginError {
     email?: string
@@ -76,6 +76,19 @@ export type IRegisterErrors = Partial<IRegister>
 
 export interface ICreateCredential {
     password: string;
+}
+
+export interface IUserSession {
+    token: string;
+    user: {
+        address: string,
+        name: string,
+        email: string, 
+        id: number, 
+        phone: string,
+        role: string,
+        orders: []
+    }
 }
 
 /////////////////////
