@@ -1,6 +1,7 @@
 import ProductsComponent from "@/components/Cards";
 
 import Video from "@/components/Video/Video";
+import Link from "next/link";
 
 
 
@@ -43,7 +44,9 @@ export default function Home() {
   <ProductsComponent />
 </div>
 
-
+<Link href={"/dashboard"}>
+<p>mi perfil</p>
+</Link>
     <img src="/assets/image 10.png" className="hidden lg:block  lg:ml-[120px] lg:mt-[50px]  lg:w-[80%] lg:h-[400px]" alt="" />
   
     </div>

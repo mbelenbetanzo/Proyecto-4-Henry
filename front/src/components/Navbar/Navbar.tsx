@@ -16,16 +16,16 @@ useEffect(() => {
 }, [])
 
   return (
-    <div className='bg-black flex justify-between items-center p-4 h-[60px]  lg:h-[70px]'>
+    <div className='bg-black flex justify-between items-center p-4 h-[60px] shadow-lg  lg:h-[70px]'>
  
         <div className=''>
         <img className=' w-[40px]  lg:w-[60px]' src='/assets/KOMODO (1580 x 450 px) (80 x 80 px) (2).svg' alt="logo pequeño"/>
         </div>
 
         <nav className='flex justify-center lg:space-x-20'>
-        <Link href="/" className='hidden lg:block  lg:text-[20px] lg:font-bold lg:text-[#C4AC23]'>HOME</Link>     
-        <Link href="/tratamientos" className='hidden lg:block lg:font-bold  lg:text-[20px] lg:text-[#C4AC23]'>OFERTAS</Link>
-        <Link href="/contactanos" className='hidden lg:block lg:font-bold lg:text-[20px] lg:text-[#C4AC23]'>CONTACTO</Link>  
+        <Link href="/" className='hidden lg:block  lg:text-[18px]  lg:text-[#C4AC23]'>HOME</Link>     
+        <Link href="/tratamientos" className='hidden lg:block   lg:text-[18px] lg:text-[#C4AC23]'>OFERTAS</Link>
+        <Link href="/contactanos" className='hidden lg:block lg:text-[18px] lg:text-[#C4AC23]'>CONTACTO</Link>  
         </nav>
 
 

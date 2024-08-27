@@ -21,7 +21,7 @@ const ProductDetail: React.FC<IProducts> = ({name, image, description, price, st
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (userSession && userSession.token) {
-        
+        Swal.fire("Producto agregado al carrito✅") //hardcodeado
     } else {
         Swal.fire("Para agregar productos al carrito debes estar registrado") 
 

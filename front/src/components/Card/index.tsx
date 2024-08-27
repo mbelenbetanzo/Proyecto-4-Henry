@@ -14,28 +14,28 @@ function ProductCard({name, price, image, id, stock, description,}: IProducts) {
   px-3 py-2 w-40 
   rounded-[8px] 
   border-0 
-  bg-[rgb(230,141,58)] 
+  bg-[#C4AC23] 
   tracking-wide 
   text-[12px] 
   transition-all 
   duration-300 
   ease-in-out 
-  shadow-[0px_5px_0px_0px_rgb(201,46,70)] 
+  shadow-[0px_5px_0px_0px_rgb(236,128,56)] 
   text-white 
   cursor-pointer
-  hover:shadow-[0px_5px_0px_0px_rgb(201,46,70)] 
-  active:bg-[rgb(236,128,56)] 
+  hover:shadow-[0px_5px_0px_0px_rgb(236,128,56)] 
+  active:bg-[#C4AC23] 
   active:shadow-none 
   active:transform 
   active:translate-y-[4px]
   active:transition-[transform_shadow]
   active:duration-[200ms]
-  sm:px-10 sm:py-4 sm:text-[15px] sm:shadow-[0px_10px_0px_0px_rgb(201,46,70)]
-  sm:hover:shadow-[0px_7px_0px_0px_rgb(201,46,70)]
+  sm:px-10 sm:py-4 sm:text-[15px] sm:shadow-[0px_10px_0px_0px_rgb(236,128,56)]
+  sm:hover:shadow-[0px_7px_0px_0px_rgb(236,128,56)]
   sm:active:translate-y-[5px]
   
-  lg:px-10 lg:py-1 lg:rounded-[10px] lg:text-[16px] lg:shadow-[0px_10px_0px_0px_rgb(201,46,70)] lg:h-[35px]
-  lg:hover:shadow-[0px_7px_0px_0px_rgb(201,46,70)] 
+  lg:px-10 lg:py-1 lg:rounded-[10px] lg:text-[16px] lg:shadow-[0px_10px_0px_0px_rgb(236,128,56)] lg:h-[35px]
+  lg:hover:shadow-[0px_7px_0px_0px_rgb(236,128,56)] 
   lg:active:translate-y-[5px]
 ">
   Detalle
