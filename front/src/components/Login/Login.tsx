@@ -98,8 +98,8 @@ useEffect(() => {
               Ingresar
             </button>
           </div>
-          <h2 className='text-center lg:mt-5 mb-2'>Todavia no te registraste? </h2>
-          <Link href={'/register'} className='bg-[#C4AC23] text-black rounded-lg px-2 py-1 text-center ml-[80px] lg:mt-8'>Registrate acá</Link>
+          <h2 className='text-center mt-3 lg:mt-5  mb-2'>Todavia no te registraste? </h2>
+          <Link href={'/register'} className='bg-[#C4AC23] text-black rounded-lg px-2 py-1 text-center ml-[60px] lg:ml-[80px] mt-11 lg:mt-8'>Registrate acá</Link>
         </form>
       </div>
       

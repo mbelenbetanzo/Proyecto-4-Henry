@@ -28,13 +28,11 @@ return (
       <Link href="/contactanos" className='hidden lg:block lg:text-[18px] lg:text-[#C4AC23]'>CONTACTO</Link>
     </nav>
 
-    <div className='lg:hidden absolute right-4'>
-      <img src="/assets/menu.png" className='flex w-[27px] h-[27px] color-white' alt="menuhamburguesa" />
-    </div>
+    
 
     {
       (userSession && userSession.token!) ? (
-        <div className='hidden lg:flex lg:flex-row lg:items-center lg:space-x-4'>
+        <div className=' flex flex-row items-center space-x-4'>
           <div className='content-center'>
             <Link href="/dashboard" className='text-[#C4AC23] text-sm flex flex-row items-center'>
               <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 448 512">
