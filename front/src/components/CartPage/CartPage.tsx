@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { createOrder } from '@/helpers/orders.helper'
 import Swal from 'sweetalert2'
+import Link from 'next/link'
 
 const CartPage = () => {
   const [cart, setCart] = useState<IProducts[]>([])
@@ -52,8 +53,8 @@ const CartPage = () => {
 
   return (
       <div>
-        <header className="flex items-center space-x-2 text-[#C4AC23] mb-6">
-          <span className="text-sm md:text-base underline">SEGUIR COMPRANDO</span>
+        <header className="flex items-center ml-10 mt-10 space-x-2 text-[#C4AC23] mb-6">
+          <Link href={'/'} className="text-sm md:text-base underline font-bold"> SEGUIR COMPRANDO</Link>
         </header>
   
         <h1 className="text-2xl md:text-3xl font-bold mb-20 text-center">MI CARRITO</h1>

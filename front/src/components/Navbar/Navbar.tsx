@@ -18,9 +18,9 @@ useEffect(() => {
   return (
     <div className='bg-black flex justify-between items-center p-4 h-[60px] shadow-lg  lg:h-[70px]'>
  
-        <div className=''>
+        <Link href={"/"} className=''>
         <img className=' w-[40px]  lg:w-[60px]' src='/assets/KOMODO (1580 x 450 px) (80 x 80 px) (2).svg' alt="logo pequeño"/>
-        </div>
+        </Link>
 
         <nav className='flex justify-center items-center lg:space-x-20 ml-12'>
         <Link href="/" className='hidden lg:block  lg:text-[18px]  lg:text-[#C4AC23]'>HOME</Link>     
@@ -48,8 +48,8 @@ useEffect(() => {
         </div>
 
         ) : (
-          <Link href="/login">
-          <p>Sign in</p>
+          <Link href="/login" className='text-white bg-[#C4AC23] p-2 rounded-xl'>
+          <p>SIGN IN</p>
           </Link>
         )
        }
