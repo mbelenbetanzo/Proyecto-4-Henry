@@ -30,92 +30,90 @@ const ProfileComponent = () => {
 
 
   return (
-    <div className="flex h-[600px] bg-gray-100">
-    
-    <div className="w-1/4 p-6 h-[520px] bg-white shadow-lg">
-      <div className="text-center">
+    <div className="flex lg:h-[600px] lg:bg-gray-100 flex-col lg:flex-row">
+  <div className="lg:w-1/4 lg:p-6 lg:h-[520px] bg-white shadow-lg w-full p-4 h-[400px]">
+    <div className="text-center">
       <video
         src="/assets/perfil2.mp4"
         autoPlay
         loop
         muted
         playsInline
-        className="w-{100%} h-auto object-cover  mx-auto rounded-full bg-gray-300"
+        className="w-[150px] lg:w-[150px]  h-auto object-cover mx-auto rounded-full bg-gray-300"
       /> 
-      
-        <h2 className="mt-4 text-xl font-bold text-gray-700">¡HOLA, {userSession?.user.name.toUpperCase()}!</h2>
-      </div>
-      <nav className="mt-10">
-        <ul className="space-y-2 text-lg">
-          <li>
-            <a href="#" className="flex items-center text-[#C4AC23] font-semibold">
-              <span>👤Perfil</span>
-            </a>
-          </li>
-          
-          <li>
-            <Link href="/dashboard/orders" className="flex items-center text-gray-700">
-              <span>📦Mis pedidos</span>
-            </Link>
-          </li>
-          <li>
-            <a href="#" className="flex items-center text-gray-700">
-              <span>💳Tarjetas De Crédito</span>
-            </a>
-          </li>
-          
-          <li>
-            <a href="#" className="flex items-center text-gray-700">
-              <span>💓Mis Favoritos</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" className="flex items-center text-[#C4AC23]">
-              <span>❌Cerrar sesion</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <h2 className="lg:mt-4 lg:text-xl lg:font-bold text-lg font-semibold text-gray-700 mt-4">
+        ¡HOLA, {userSession?.user.name.toUpperCase()}!
+      </h2>
     </div>
-
-    
-    <div className="w-3/4 p-6 mt-10">
-      <h3 className="text-2xl font-bold mb-6">Perfil</h3>
-      <div className="bg-white p-6 rounded-lg shadow-lg">
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div>
-            <h4 className="text-gray-600">Nombre</h4>
-            <p className="text-gray-800">{userSession?.user.name}</p>
-          </div>
-          <div>
-            <h4 className="text-gray-600">Telefono</h4>
-            <p className="text-gray-800">{userSession?.user.phone}</p>
-          </div>
-          <div>
-            <h4 className="text-gray-600">Email</h4>
-            <p className="text-gray-800">{userSession?.user.email}</p>
-          </div>
-          <div>
-            <h4 className="text-gray-600">DNI</h4>
-            <p className="text-gray-800">No especificado</p>
-          </div>
-          <div>
-            <h4 className="text-gray-600">Mi direccion de envio</h4>
-            <p className="text-gray-800">{userSession?.user.address}</p>
-          </div>
-          <div>
-            <h4 className="text-gray-600">Fecha de nacimiento</h4>
-            <p className="text-gray-800">No especificado</p>
-          </div>
-          
+    <nav className="lg:mt-10 mt-6">
+      <ul className="space-y-2 lg:text-lg text-sm">
+        <li>
+          <a href="#" className="flex items-center text-[#C4AC23] font-semibold">
+            <span>👤Perfil</span>
+          </a>
+        </li>
+        <li>
+          <Link href="/dashboard/orders" className="flex items-center text-gray-700">
+            <span>📦Mis pedidos</span>
+          </Link>
+        </li>
+        <li>
+          <a href="#" className="flex items-center text-gray-700">
+            <span>💳Tarjetas De Crédito</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" className="flex items-center text-gray-700">
+            <span>💓Mis Favoritos</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" className="flex items-center text-[#C4AC23]">
+            <span>❌Cerrar sesion</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
+  <div className="lg:w-3/4 lg:p-6 lg:mt-10 p-4 mt-2">
+    <h3 className="lg:text-2xl lg:font-bold mb-4 text-xl font-semibold">
+      Perfil
+    </h3>
+    <div className="bg-white p-4 lg:p-6 rounded-lg shadow-lg">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+        <div>
+          <h4 className="text-gray-600">Nombre</h4>
+          <p className="text-gray-800">{userSession?.user.name}</p>
         </div>
-        <div className="text-right">
-          <button className="px-4 py-2 bg-[#C4AC23] text-white rounded-md">EDITAR</button>
+        <div>
+          <h4 className="text-gray-600">Teléfono</h4>
+          <p className="text-gray-800">{userSession?.user.phone}</p>
         </div>
+        <div>
+          <h4 className="text-gray-600">Email</h4>
+          <p className="text-gray-800">{userSession?.user.email}</p>
+        </div>
+        <div>
+          <h4 className="text-gray-600">DNI</h4>
+          <p className="text-gray-800">No especificado</p>
+        </div>
+        <div>
+          <h4 className="text-gray-600">Mi dirección de envío</h4>
+          <p className="text-gray-800">{userSession?.user.address}</p>
+        </div>
+        <div>
+          <h4 className="text-gray-600">Fecha de nacimiento</h4>
+          <p className="text-gray-800">No especificado</p>
+        </div>
+      </div>
+      <div className="text-right">
+        <button className="px-4 py-2 bg-[#C4AC23] text-white rounded-md">EDITAR</button>
       </div>
     </div>
   </div>
-);
+</div>
+  )
   
 }
 

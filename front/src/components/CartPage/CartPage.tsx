@@ -53,11 +53,9 @@ const CartPage = () => {
 
   return (
       <div>
-        <header className="flex items-center ml-10 mt-10 space-x-2 text-[#C4AC23] mb-6">
-          <Link href={'/'} className="text-sm md:text-base underline font-bold"> SEGUIR COMPRANDO</Link>
-        </header>
+        
   
-        <h1 className="text-2xl md:text-3xl font-bold mb-20 text-center">MI CARRITO</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mb-10 mt-10  lg:mb-20 text-center">MI CARRITO</h1>
   
         {cart && cart.length > 0 ? (
           <>
@@ -75,16 +73,16 @@ const CartPage = () => {
                   <div className="md:w-3/4">
                     <h2 className="text-lg font-bold">{product.name}</h2>
                     <div className="flex justify-between items-center mt-4">
-                      <span className="text-gray-500">Eliminar producto</span>
-                      <span className="text-[#C4AC23] font-bold">US${product.price}</span>
+                      <span className="text-[12px]  text-gray-500">Eliminar producto</span>
+                      <span className="hidden lg:block text-[#C4AC23] font-bold">US${product.price}</span>
   
-                      <div className="flex items-center space-x-2 h-[30px] bg-[#C4AC23] p-2 rounded-[25px]">
-                        <button className="px-2 rounded">-</button>
+                      <div className="flex items-center space-x-2 h-[30px] bg-[#C4AC23] p-1 lg:p-2 rounded-[25px]">
+                        <button className="p-1 lg:px-2 rounded">-</button>
                         <span>1</span>
-                        <button className="px-2 rounded">+</button>
+                        <button className="p-1 lg:px-2 rounded">+</button>
                       </div>
   
-                      <span className="font-bold text-gray-800">US${product.price}</span>
+                      <span className="font-bold ml-5 text-gray-800">US${product.price}</span>
                     </div>
                   </div>
                 </div>
@@ -99,7 +97,7 @@ const CartPage = () => {
               </p>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <span><b>ENVIO FULL🚀</b> (En 24hs lo tenes en la puerta de tu domicilio)</span>
+                  <span><b>ENVIO FULL🚀</b> (En 24hs lo tenes en tu domicilio)</span>
                 </div>
                 <span className="font-bold text-gray-800">Gratis</span>
               </div>
@@ -119,13 +117,14 @@ const CartPage = () => {
                 <h2>Total</h2>
                 <span>US${totalCart}</span>
               </div>
-              <button onClick={handleClick} className="w-full py-3 text-white mb-[100px] bg-[#C4AC23] rounded-lg text-center">
+              <Link href={'/'} className=" items-center lg:ml-36  mt-10 space-x-2 text-orange-500 mb-10 text-[13px] lg:text-[20px] md:text-base text-start font-bold"> Psst psst, no te olvidas de nada? Agrega más productos haciendo click <b>aca</b>😉</Link>
+              <button onClick={handleClick} className="w-full py-3 mt-5 text-white mb-[100px] bg-[#C4AC23] rounded-lg text-center">
                 FINALIZAR COMPRA
               </button>
             </div>
           </>
         ) : (
-          <div className='h-[700px] text-center text-[40px]'>No tienes productos en tu carrito!😟</div>
+          <div className='h-[700px] text-center text-[15px] lg:text-[40px]'>No tienes productos en tu carrito!😟</div>
         )}
       </div>
     );

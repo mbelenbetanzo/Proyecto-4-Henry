@@ -34,20 +34,20 @@ const Orders = () => {
       <h1 className="text-2xl font-bold text-center mb-4 mt-10">MIS PEDIDOS</h1>
 
       <div className="flex justify-between items-center mb-4">
-        <Link href={"/dashboard"} className="text-sm font-semibold underline">
+        <Link href={"/dashboard"} className=" text-[11px] ml-20 lg:m-2 bg-[#C4AC23] p-2 rounded-xl lg:text-sm  ">
          VOLVER A MI PERFIL
         </Link>
         
       </div>
 
-      <h2 className="text-xl font-bold mb-4">Pedidos</h2>
+      <h2 className="text-xl font-bold mb-2 lg:mb-4">Pedidos</h2>
 
       {orders && orders.length > 0 ? (
         orders.map((order) => (
           <div key={order.id} className="border rounded-lg shadow-md p-4 mb-4">
             <div className="flex justify-between items-center mb-2">
               <div>
-                <p className="text-sm">
+                <p className="text-sm -mt-8">
                   <span className="font-bold">Fecha del pedido:</span> {new Date(order.date)?.toLocaleDateString()} ✅</p>
 
               </div>
@@ -61,10 +61,10 @@ const Orders = () => {
 
 
             <div className="flex justify-between items-center mt-2">
-              <button className="bg-[#C4AC23] text-white py-2 px-4 text-sm font-semibold rounded-lg">
+              <button className="bg-[#C4AC23] text-white py-2 px-2 mr-7  lg:px-4 text-[10px] lg:text-sm font-semibold rounded-lg">
                 VER DETALLES DEL PEDIDO
               </button>
-              <a href="#" className="text-orange-500 text-sm underline">
+              <a href="#" className="text-orange-500 text-[12px] ml-10  lg:text-sm underline">
                 CAMBIAR O DEVOLVER
               </a>
             </div>
