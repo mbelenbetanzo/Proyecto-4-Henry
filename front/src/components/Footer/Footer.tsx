@@ -11,7 +11,7 @@ const Footer = () => {
       <img className="w-[30px]  lg:w-[45px] lg:h-[45px]" src="/assets/logoredes3.svg" alt="twitter" />
     </div>
   
-    <div className="flex lg:justify-center lg:items-center lg:ml-10">
+    <div className="flex lg:justify-center lg:items-center lg:ml-28">
       <img className=" h-[40px] lg:h-[80px]" src="/assets/KOMODO (1580 x 450 px) (80 x 80 px) (2).svg" alt="logo" />
     </div>
   
