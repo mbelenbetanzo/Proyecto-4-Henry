@@ -35,7 +35,7 @@ export default function Home() {
     </section>
 
     <section className="lg:flex justify-center lg:mt-9">
-      <img src="/assets/image1.png" className="p-3 mt-2 h-[150px] lg:p-8 lg:h-auto lg:w-[100%] "  alt="" />
+      <img src="/assets/macbookhome.png" className="p-3 rounded mt-2 h-[150px] lg:p-8 lg:h-auto lg:w-[100%] "  alt="" />
     </section>
 
     <h2 className="text-[#c4ac23] mt-3 mb-4 lg:mt-5 lg:text-[40px] lg:text-[#C4AC23] text-center lg:mb-20 "  >Nuestros productos EN STOCK🔥</h2>
@@ -44,10 +44,8 @@ export default function Home() {
   <ProductsComponent />
 </div>
 
-<Link href={"/dashboard"}>
-<p>mi perfil</p>
-</Link>
-    <img src="/assets/image 10.png" className="hidden lg:block  lg:ml-[120px] lg:mt-[50px]  lg:w-[80%] lg:h-[400px]" alt="" />
+
+    <img src="/assets/cartelhome.png" className="hidden lg:block  lg:ml-[45px] pb-[50px] rounded lg:mt-[50px]  lg:w-[1250px] lg:h-[400px]" alt="" />
   
     </div>
   

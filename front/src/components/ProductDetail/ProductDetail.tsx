@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 const ProductDetail: React.FC<IProducts> = ({name, image, description, price, stock, id}) => {
     const router = useRouter();
@@ -47,11 +48,12 @@ const ProductDetail: React.FC<IProducts> = ({name, image, description, price, st
     } }
   
     return (
-    <main className='h-[1000px] lg:h-[750px] flex flex-col lg:flex-row'>
+    <main className='h-[1000px] lg:h-[750px] p-10 flex flex-col lg:flex-row'>
 
-      <div className='mb-7 lg:w-[45%] '>
-      <h2 className='mt-4 mb-4 ml-6'>Products/{name}</h2>
-      <img className='w-[90%] lg:h-[480px] mx-auto' src={image} alt={name} />
+      <div className='mb-11 lg:w-[45%] '>
+        <Link href={'/'} className='mt-9 mb-4 ml-6'>⬅️ Volver a la tienda</Link>
+      
+      <img className='w-[90%] lg:h-[480px] mt-6 mx-auto' src={image} alt={name} />
       </div>
 
       <div className='ml-10 lg:w-[45%] mt-12'>
@@ -59,9 +61,9 @@ const ProductDetail: React.FC<IProducts> = ({name, image, description, price, st
         <h3 className='lg:mt-10'>{description}</h3>
         <h3 className='lg:mt-10 font-bold lg:text-[30px]'>US${price}</h3>
         <div>
-          <h3 className='mt-3 lg:text-[20px]'>3 cuotas sin interes</h3>
-          <img src="/assets/tarjetascelu.svg" className='lg:w-[250px] lg:ml-[-10px]' alt="tarjetas" />
-          <h3 className='font-bold'>VER MEDIOS DE PAGO</h3>
+          <h3 className='mt-3 lg:text-[15px]'>3 cuotas sin interés</h3>
+          <img src="/assets/tarjetascelu.svg" className='lg:w-[150px] lg:ml-[-10px]' alt="tarjetas" />
+          <h3 className='font-bold -ml-1'>VER MEDIOS DE PAGO</h3>
         </div>
         <div className='flex justify-between mt-5'>
         <span className='lg:text-[20px]'>CANTIDAD</span>

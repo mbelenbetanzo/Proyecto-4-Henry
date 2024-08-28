@@ -72,8 +72,8 @@ const Orders = () => {
         ))
       ) : (
         <div>
-          <p>No tenes pedidos📦</p>
-          <Link href={"/"}>
+          <p className='text-center font-bold text-xl mb-10'>No tenes pedidos📦</p>
+          <Link href={"/"} className='lg:ml-[300px] font-bold rounded-xl bg-[#C4AC23] p-4 text-xl mb-5' >
           HACE CLICK ACA PARA COMPRAR TUS PRODUCTOS FAVORITOS🔥
           </Link>
         </div>

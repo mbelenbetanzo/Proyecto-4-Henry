@@ -93,7 +93,7 @@ const ProfileComponent = () => {
           </div>
           <div>
             <h4 className="text-gray-600">Email</h4>
-            <p className="text-gray-800">beel.betanzoo@hotmail.com.ar</p>
+            <p className="text-gray-800">{userSession?.user.email}</p>
           </div>
           <div>
             <h4 className="text-gray-600">DNI</h4>
