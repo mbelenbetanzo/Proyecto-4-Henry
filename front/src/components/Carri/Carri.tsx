@@ -7,7 +7,7 @@ const Carri = () => {
     <img src="{}" alt="{}" className="w-16 h-16" />
     <h2 className="text-center lg:text-left text-black">Título</h2>
     <MercadoLibreButton />
-    <h2 className="text-center lg:text-left text-black">$10000</h2>
+    <h2 className="text-center lg:text-left text-black"></h2>
     <button className="text-black hover:text-red-700">Eliminar</button>
 </section>
   )
