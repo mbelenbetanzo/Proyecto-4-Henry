@@ -1,9 +1,6 @@
 import ProductsComponent from "@/components/Cards";
-
 import Video from "@/components/Video/Video";
 import Link from "next/link";
-
-
 
 export default function Home() {
   return (

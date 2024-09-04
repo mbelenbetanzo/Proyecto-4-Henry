@@ -30,6 +30,7 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement> ) => {
       Swal.fire("Te logueaste correctamente") 
       router.push("/")
     } catch (error:any) {
+      Swal.fire("No pudimos corroborar tus datos.Intentalo nuevamente")
       throw Error(error)
     }
     
